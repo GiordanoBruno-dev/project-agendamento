@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const colaborador = new Schema({
+const cliente = new Schema({
     nome: {
         type: String,
         required: true,
@@ -37,39 +37,34 @@ const colaborador = new Schema({
         enum: ['A', 'I'],
         default: 'A'
     },
-    contaBancaria: {
-        titular:{
-            type: String, 
-            required: true
-        },
-        cpfCnpj:{
-            type: String, 
-            required: true
-        },
-         banco:{
-            type: String, 
-            required: true
-        }, 
-        agencia:{
-            type: String, 
-            required: true
-        }, 
-        numero:{
-            type: String, 
-            required: true
-        }, 
-        cv:{
-            type: String, 
-            required: true
-        }, 
-        recipientID: {
+    documento: {
+        tipo: {
             type: String,
-            required: true
-        }, 
-        dataCadastro: {
-            type: Date,
-            default: Date.now,
+            required: true,
+            enum: ['cpf', 'cnpj'],
         },
+        numero: {
+            type: String,
+            required: true,
+        },
+        endereco: {
+           cidade: String,
+           uf: String,
+           cep: String,
+           numero: Number,
+           pais: String,
+        },
+
+    },
+    numero: {
+        type: String, 
+        required: true
+    }, 
+
+    dataCadastro: {
+        type: Date,
+        default: Date.now,
+
     },
 
 
@@ -78,4 +73,4 @@ const colaborador = new Schema({
 });
 
 
-MediaSourceHandle.exports = mongoose.model('colaborador', colaborador);
+MediaSourceHandle.exports = mongoose.model('cliente', cliente);
