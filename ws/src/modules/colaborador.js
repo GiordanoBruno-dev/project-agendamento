@@ -78,4 +78,4 @@ const colaborador = new Schema({
 });
 
 
-MediaSourceHandle.exports = mongoose.model('colaborador', colaborador);
+module.exports = mongoose.model('colaborador', colaborador);

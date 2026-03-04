@@ -37,4 +37,4 @@ const salao = new Schema({
 
 salao.index({geo: '2dsphere'});
 
-MediaSourceHandle.exports = mongoose.model('Salao', salao);
+module.exports = mongoose.model('salao', salao);

@@ -3,9 +3,9 @@ const Schema = mongoose.Schema;
 
 const servico = new Schema({
     
-    salaoID: {
-        type: mongoose.Types.ObjectId,
-        ref: 'Salao',
+    salaoId: {
+        type: Schema.Types.ObjectId,
+        ref: 'salao',
         required: true,
     },
     titulo:{
@@ -25,7 +25,7 @@ const servico = new Schema({
         required: true,
     },
     recorrencia:{
-        type:NUmber,   // Periodo de volta do cliente em dias 
+        type:Number,   // Periodo de volta do cliente em dias 
         required: true,
     },
     descricao:{
@@ -47,4 +47,4 @@ const servico = new Schema({
 });
 
 
-MediaSourceHandle.exports = mongoose.model('servico', servico);
+module.exports = mongoose.model('servico', servico);

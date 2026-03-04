@@ -1,8 +1,11 @@
 const express = require('express');
 const app = express();
 const morgan = require('morgan');
+require('./database');
 
-// MIDDLEWARES app.use(morgan('dev'));
+// MIDDLEWARES
+app.use(morgan('dev'));
+app.use(express.json());
 
 //VARIABLES
 app.set('port', 8000);

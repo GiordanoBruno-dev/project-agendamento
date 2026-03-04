@@ -3,21 +3,21 @@ const Schema = mongoose.Schema;
 
 const horario = new Schema({
     salaoId: {
-        type: mongoose.Types.Object,
-        ref: 'Salao',
+        type: Schema.Types.ObjectId,
+        ref: 'salao',
         required: true,
     },
     especialidades: [
         {
-        type: mongoose.Types.Object,
-        ref: 'Servico',
+        type: Schema.Types.ObjectId,
+        ref: 'servico',
         required: true,
     },
     ],
     colaboradores: [
         {
-        type: mongoose.Types.Object,
-        ref: 'Servico',
+        type: Schema.Types.ObjectId,
+        ref: 'colaborador',
         required: true,
     },
     ],
@@ -42,4 +42,4 @@ const horario = new Schema({
 });
 
 
-MediaSourceHandle.exports = mongoose.model('horario', horario);
+module.exports = mongoose.model('horario', horario);

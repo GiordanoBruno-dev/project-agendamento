@@ -3,13 +3,13 @@ const Schema = mongoose.Schema;
 
 const salaoColaborador = new Schema({
     salaoId: {
-        type: mongoose.Types.Object,
-        ref: 'Salao',
+        type: Schema.Types.ObjectId,
+        ref: 'salao',
         required: true,
     },
     colaboradorId: {
-        type: mongoose.Types.Object,
-        ref: 'Colaborador',
+        type: Schema.Types.ObjectId,
+        ref: 'colaborador',
         required: true,
     },
     status: {
@@ -27,4 +27,4 @@ const salaoColaborador = new Schema({
 });
 
 
-MediaSourceHandle.exports = mongoose.model('SalaoColaborador', salaColaborador); 
+module.exports = mongoose.model('salaoColaborador', salaoColaborador);

@@ -3,13 +3,13 @@ const Schema = mongoose.Schema;
 
 const colaboradorServico = new Schema({
     servicoId: {
-        type: mongoose.Types.Object,
-        ref: 'Colaborador',
+        type: Schema.Types.ObjectId,
+        ref: 'servico',
         required: true,
     },
     colaboradorId: {
-        type: mongoose.Types.Object,
-        ref: 'Servico',
+        type: Schema.Types.ObjectId,
+        ref: 'colaborador',
         required: true,
     },
     status: {
@@ -27,4 +27,4 @@ const colaboradorServico = new Schema({
 });
 
 
-MediaSourceHandle.exports = mongoose.model('colaboradorServico', colaboradorServico); 
+module.exports = mongoose.model('colaboradorServico', colaboradorServico);

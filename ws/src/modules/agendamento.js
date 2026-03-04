@@ -3,22 +3,22 @@ const Schema = mongoose.Schema;
 
 const agendamento = new Schema({
     salaoId: {
-        type: mongoose.Types.Object,
+        type: Schema.Types.ObjectId,
         ref: 'salao',
         required: true,
     },
     clienteId: {
-        type: mongoose.Types.Object,
-        ref: 'Cliente',
+        type: Schema.Types.ObjectId,
+        ref: 'cliente',
         required: true,
     },
     servicoId: {
-        type: mongoose.Types.Object,
+        type: Schema.Types.ObjectId,
         ref: 'servico',
         required: true,
     },
     colaboradorId: {
-        type: mongoose.Types.Object,
+        type: Schema.Types.ObjectId,
         ref: 'colaborador',
         required: true,
     },
@@ -47,4 +47,4 @@ const agendamento = new Schema({
 });
 
 
-MediaSourceHandle.exports = mongoose.model('agendamento', agendamento); 
+module.exports = mongoose.model('agendamento', agendamento);
